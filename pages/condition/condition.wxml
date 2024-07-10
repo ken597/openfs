@@ -1,0 +1,435 @@
+<!--pages/condition/condition.wxml-->
+<!-- 主体组件 -->
+<view class="root">
+  <view class="body-wrapper">
+    <!----------------------------------- 空气温湿度----------------------------------->
+    <view class="body-timer-wrapper">
+      <view class="body-timer-style">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 18px;">空气湿度</text>
+          <text>{{ sensor.air_humid }}%</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 8px; margin-right: 10px;" src="../image/humi.png"></image>
+        </view>
+      </view>
+      <view class="body-timer-style" >
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 18px;">空气温度</text>
+          <text>{{ sensor.air_temp }}℃</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 8px; margin-right: 10px;" src="../image/temp.png"></image>
+        </view>
+      </view>
+    </view>
+    <!----------------------------------- 光强 二氧化碳含量----------------------------------->
+    <view class="body-timer-wrapper">
+      <view class="body-timer-style" >
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">光强</text>
+          <text>{{ sensor.Light }}Lux</text>
+       </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/II.png"></image>
+        </view>
+      </view>
+      <view class="body-timer-style">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">CO2</text>
+          <text>{{ sensor.CO2 }}ppm</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/CO2.png"></image>
+        </view>
+      </view>
+    </view>
+<!----------------------------------- 土壤温湿度----------------------------------->
+    <view class="body-timer-wrapper">
+      <view class="body-timer-style">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 18px;">土壤湿度</text>
+          <text>{{ sensor.soil_humid }}%</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 8px; margin-right: 10px;" src="../image/SH-10.png"></image>
+        </view>
+      </view>
+      <view class="body-timer-style" >
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 18px;">土壤温度</text>
+          <text>{{ sensor.soil_temp }}℃</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 8px; margin-right: 10px;" src="../image/ST-10.png"></image>
+        </view>
+      </view>
+    </view>
+ <!----------------------------------- PH 电导率 ----------------------------------->
+ <view class="body-timer-wrapper">
+      <view class="body-timer-style" >
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">PH</text>
+          <text>{{ sensor.PH }}h</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/soil pH.png"></image>
+        </view>
+      </view>
+      <view class="body-timer-style">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">电导率</text>
+          <text>{{ sensor.elec }}us/cm</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/SEC.png"></image>
+        </view>
+      </view>
+    </view>
+ <!----------------------------------- 氮 磷 ----------------------------------->
+ <view class="body-timer-wrapper">
+      <view class="body-timer-style" >
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">氮</text>
+          <text style="font-size: 12px;">{{ sensor.N }}mg/KG</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/NPK.png"></image>
+        </view>
+      </view>
+      <view class="body-timer-style">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">磷</text>
+          <text style="font-size: 12px;">{{ sensor.P }}mg/KG</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/NPK.png"></image>
+        </view>
+      </view>
+    </view>
+<!----------------------------------- 钾含量 ----------------------------------->
+    <view class="body-timer-wrapper">
+      <view class="body-timer-style" >
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 20px;">钾</text>
+          <text style="font-size: 12px;">{{ sensor.K }}mg/KG</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right">
+          <image style="width: 40px; height: 40px; margin-top: 10px; margin-right: 10px;" src="../image/NPK.png"></image>
+        </view>
+      </view>
+    </view>
+    <!----------------------------------- 通风  浇水 ----------------------------------->
+    <view class="body-timer-wrapper1">
+      <view class="control">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 28px;">通风</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right1">
+          <switch bindchange="bind_fan_control_change" style="margin-top:3px; margin-right: 3px;" checked="{{ status.fan }}"></switch>
+          <image style="height: 35px; width: 35px;" wx:if="{{ status.fan }}" src="../image/fan_on.png"></image>
+         <image style="height: 35px; width: 35px;" wx:else src="../image/fan_off.png"></image>
+        </view>
+      </view>
+
+      <view class="control">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 28px;">浇水</text>
+        </view>
+        <!-- 右侧   需要增加变量  status.auto  -->
+        <view class="body-timer-right1">
+          <switch bindchange="bind_Water_control_change" style="margin-top:3px; margin-right: 3px;" checked="{{ status.Water }}"></switch>
+          <image style="height: 35px; width: 35px;" wx:if="{{ status.Water }}" src="../image/water_on.png"></image>
+         <image style="height: 35px; width: 35px;" wx:else src="../image/water.png"></image>
+        </view>
+      </view>
+    </view>
+      <!----------------------------------- 遮阳  施肥 ----------------------------------->
+      <view class="body-timer-wrapper1">
+      <view class="control">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 28px;">遮阳</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right1">
+          <switch bindchange="bind_Sun_control_change" style="margin-top:3px; margin-right: 3px;" checked="{{ status.Sun }}"></switch>
+          <image style="height: 35px; width: 35px;" wx:if="{{ status.Sun }}" src="../image/Sun_on.png"></image>
+         <image style="height: 35px; width: 35px;" wx:else src="../image/Sun_off.png"></image>
+        </view>
+      </view>
+
+      <view class="control">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 28px;">施肥</text>
+        </view>
+        <!-- 右侧   需要增加变量  status.auto  -->
+        <view class="body-timer-right1">
+          <switch bindchange="bind_fer_control_change" style="margin-top:3px; margin-right: 3px;" checked="{{ status.fer }}"></switch>
+          <image style="height: 35px; width: 35px;" wx:if="{{ status.fer }}" src="../image/fer_on.png"></image>
+         <image style="height: 35px; width: 35px;" wx:else src="../image/fer_off.png"></image>
+        </view>
+      </view>
+    </view>
+    <!----------------------------------- 开灯 自动 ----------------------------------->
+    <view class="body-timer-wrapper">
+      <view class="control">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 28px;">开灯</text>
+        </view>
+        <!-- 右侧 -->
+        <view class="body-timer-right1">
+          <switch bindchange="bind_bulb_control_change" style="margin-top:3px; margin-right: 3px;" checked="{{ status.bulb }}"></switch>
+          <image style="height: 35px; width: 35px;" wx:if="{{ status.bulb }}" src="../image/light_on.png"></image>
+         <image style="height: 35px; width: 35px;" wx:else src="../image/light_off.png"></image>
+        </view>
+      </view>
+      <view class="control">
+        <!-- 左侧 -->
+        <view class="body-timer-left">
+          <text style="font-size: 28px;">自动</text>
+        </view>
+        <!-- 右侧    -->
+        <view class="body-timer-right">
+          <switch bindchange="bind_auto_control_change" style="margin-top:12px; margin-right: 5px;" checked="{{ status.auto }}"></switch>
+        </view>
+      </view>
+    </view>
+  </view>
+
+    <!----------------------------------- 上限和下限部分 ----------->
+    <van-divider contentPosition="center">温湿度传感器的阈值设置</van-divider>
+    <!-- 显示本地存储的空气温度上下限值  -->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  --> 
+      <view class="body-set-slider-left">
+        <view>
+          空气温度上限值: {{ threshold.airtemp_up }}
+        </view>
+      </view>      
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <view style="margin-right: 36rpx;">
+          空气温度下限值: {{ threshold.airtemp_down }}
+        </view>
+      </view>
+    </view>
+    <!-- 显示本地存储的空气湿度上下限值  -->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  --> 
+      <view class="body-set-slider-left">
+        <view>
+          空气湿度上限值: {{ threshold.airhumid_up }}
+        </view>
+      </view>      
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <view style="margin-right: 36rpx;">
+          空气湿度下限值: {{ threshold.airhumid_down }}
+        </view>
+      </view>
+    </view>
+    <!-- 显示本地存储的土壤湿度上下限值  -->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  --> 
+      <view class="body-set-slider-left">
+        <view>
+          土壤湿度上限值: {{ threshold.soilhumid_up }}
+        </view>
+      </view>      
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <view style="margin-right: 36rpx;">
+          土壤湿度下限值: {{ threshold.soilhumid_down }}
+        </view>
+      </view>
+    </view>
+    <!-- 显示本地存储的光照强度上下限值  -->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  --> 
+      <view class="body-set-slider-left">
+        <view>
+          光照强度上限值: {{ threshold.Light_up }}
+        </view>
+      </view>      
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+          光照强度下限值: {{ threshold.Light_down }}
+      </view>
+    </view>
+    <!-- 显示本地存储的氮磷钾下限值  -->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  --> 
+      <view class="body-set-slider-left">
+        <view>
+          氮含量下限值: {{ threshold.N_down }}
+        </view>
+      </view>      
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+          磷含量下限值: {{ threshold.P_down }}
+      </view>
+      <view class="body-set-slider-left">
+          钾含量下限值: {{ threshold.K_down }}
+      </view>
+    </view>
+         
+    <!-- 空气温度上限 -->
+    <view class="body-set-slider-wrapper">         
+      <!-- 左侧容器--> 
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">空气温度上限</text>
+      </view>          
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <slider show-value min="25" max="60" style="width: 150px;" bindchange="bind_slider_set_airtemp_up" step="1"/>
+      </view>
+    </view>  
+    <!-- 空气温度下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">空气温度下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="0" max="30" style="width: 150px;" bindchange="bind_slider_set_airtemp_down" step="1"/>
+      </view>
+    </view>   
+    <!-- 空气湿度上限 -->
+    <view class="body-set-slider-wrapper">         
+      <!-- 左侧容器--> 
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">空气湿度上限</text>
+      </view>          
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <slider show-value min="50" max="100" style="width: 150px;" bindchange="bind_slider_set_airhumid_up" step="1"/>
+      </view>
+    </view>  
+    <!-- 空气湿度下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">空气湿度下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="20" max="60" style="width: 150px;" bindchange="bind_slider_set_airhumid_down" step="1"/>
+      </view>
+    </view>   
+    <!-- 土壤湿度上限 -->
+    <view class="body-set-slider-wrapper">         
+      <!-- 左侧容器--> 
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">土壤湿度上限</text>
+      </view>          
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <slider show-value min="50" max="100" style="width: 150px;" bindchange="bind_slider_set_soilhumid_up" step="1"/>
+      </view>
+    </view>  
+    <!-- 土壤湿度下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">土壤湿度下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="0" max="65" style="width: 150px;" bindchange="bind_slider_set_soilhumid_down" step="1"/>
+      </view>
+    </view>   
+     <!-- 光照强度上限 -->
+     <view class="body-set-slider-wrapper">         
+      <!-- 左侧容器--> 
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">光照强度上限</text>
+      </view>          
+      <!-- 右侧容器 -->
+      <view class="body-set-slider-left">
+        <slider show-value min="300" max="5000" style="width: 150px;" bindchange="bind_slider_set_Light_up" step="1"/>
+      </view>
+    </view>  
+    <!-- 光照强度下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">光照强度下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="0" max="2000" style="width: 150px;" bindchange="bind_slider_set_Light_down" step="1"/>
+      </view>
+    </view>   
+        <!-- 氮含量下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">氮含量下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="200" max="500" style="width: 150px;" bindchange="bind_slider_set_N_down" step="1"/>
+      </view>
+    </view>  
+        <!-- 磷含量下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">磷含量下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="0" max="150" style="width: 150px;" bindchange="bind_slider_set_P_down" step="1"/>
+      </view>
+    </view>  
+        <!-- 钾含量下限 --->
+    <view class="body-set-slider-wrapper">    
+      <!-- 左侧容器  -->
+      <view class="body-set-slider-left">
+        <text style="font-size: 10px;">钾含量下限</text>
+      </view>      
+      <!-- 右侧容器   -->
+      <view class="body-set-slider-left">
+        <slider show-value min="0" max="150" style="width: 150px;" bindchange="bind_slider_set_K_down" step="1"/>
+      </view>
+    </view>  
+    <!-- 保存本地 --->
+    <view style="margin-bottom: 15px;">
+      <button style="background-color: green;"bindtap="bind_write_device_flash">保存本地</button>
+    </view>    
+  </view> 
+
+<view class="choose">
+    <navigator class="join" url="/pages/situation/situation">植物生长情况</navigator>
+    <navigator class="join" url="/pages/home/home">NFC配网</navigator>
+    <!----------------------------------- 怎么返回，咋反不回去----------------------------------->
+  </view>

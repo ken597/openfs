@@ -1,0 +1,14 @@
+<view >
+    <view class="cover">
+        <image src="/pages/image/logo.png" class="logo" />
+    </view>
+    <view class="title">嗨~欢迎来到粮食护卫队小程序!</view>
+    <view class="desc1">这里是粮食护卫队的的分组小程序V1 版本</view>
+    <view class="desc2">如果感觉哪里不对，请告诉我（QQ3210315723）期待你的建议</view>
+    <view class="choose">
+        <navigator class="join" url="/pages/condition/condition">大棚内状况</navigator>
+        <navigator class="join" url="/pages/situation/situation">植物生长情况</navigator>
+        <navigator class="join" url="/pages/home/home">登录</navigator>
+    </view>
+    <!-- <button bindtap="goto>我的</button>"> -->
+</view>
